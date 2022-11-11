@@ -1,5 +1,5 @@
 # Meus exercicios
-Aqui vai estar os exercicios que realizei no meu dia!
+Aqui vão estar os exercicios que realizei no meu dia!
 
 ## o que eu fiz hoje?
 
