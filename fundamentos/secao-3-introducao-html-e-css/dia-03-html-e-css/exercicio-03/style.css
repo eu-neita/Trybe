@@ -1,0 +1,9 @@
+.list-phases{
+    background-color: yellow;
+    
+    text-transform: uppercase;
+}
+.list-phases .par{
+    color: green;
+    text-transform: lowercase;
+}
