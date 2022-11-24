@@ -19,14 +19,12 @@ switch (pecasXadrezLower) {
         console.log('A torre Move-se em linha reta, tanto na vertical quanto na horizontal, quantas casas quiser.')
         break
     case "cavalo":
-            console.log('')
+        console.log('O Cavalo pode saltar por cima de outras peças, ele só se movimenta em L')
         break
-    case "":
-            console.log('')
-        break
-    case "":
-            console.log('')
+    case "peão":
+        console.log('O Peão Move-se sempre uma casa para frente, exceto no primeiro movimento, quando pode mover-se duas casas. Não pode retroceder e só pode capiturar na diagonal')
         break
     default:
+        console.log('não é uma peça válida')
         break;
 }
