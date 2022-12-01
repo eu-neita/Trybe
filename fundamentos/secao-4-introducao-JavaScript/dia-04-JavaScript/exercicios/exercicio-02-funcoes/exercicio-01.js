@@ -67,24 +67,24 @@ function somatorio(number) {
 }
 
 somatorio(5);
-
+let countForTrue = false;
 function verifica(word, ending) {
     let multila = word.split('');
     let multilaEnd = ending.split('')
     //  return console.log(multilaEnd)
-    let contForTrue = false;
     for (let index = 0; index < multila.length-1; index+=1) {
         
         if(multila[index] == multilaEnd[0] && multila[index+1] == multilaEnd[1]){
-            return console.log(true);
+            countForTrue = true;
         }else if(multila[index] == multilaEnd[0] && multila[index+1] == multilaEnd[1] && multila[index+2] == multilaEnd[3]){
-            return console.log(true);
+            countForTrue = true;
+        }else if(multila[index+0] == multilaEnd[1] && multila[index+1] == multilaEnd[2]){
+            countForTrue = true;
         }
-        
         else{
-            return console.log(false);
+            countForTrue = false;
         }
     }
-
+console.log(countForTrue)
 }
-verifica('trybe','br')
+verifica('trybe','ybr')
