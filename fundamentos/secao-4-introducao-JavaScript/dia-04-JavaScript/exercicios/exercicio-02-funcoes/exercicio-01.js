@@ -76,11 +76,15 @@ function verifica(word, ending) {
     for (let index = 0; index < multila.length-1; index+=1) {
         
         if(multila[index] == multilaEnd[0] && multila[index+1] == multilaEnd[1]){
-            contForTrue = true;
-        }else{
-            contForTrue = false;
+            return console.log(true);
+        }else if(multila[index] == multilaEnd[0] && multila[index+1] == multilaEnd[1] && multila[index+2] == multilaEnd[3]){
+            return console.log(true);
+        }
+        
+        else{
+            return console.log(false);
         }
     }
-    return console.log(contForTrue);
+
 }
-verifica('trybe','by')
+verifica('trybe','br')
