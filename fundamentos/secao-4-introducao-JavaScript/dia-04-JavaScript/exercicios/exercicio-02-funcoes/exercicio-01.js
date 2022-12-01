@@ -69,12 +69,18 @@ function somatorio(number) {
 somatorio(5);
 
 function verifica(word, ending) {
-    for (let index = 0; index < word.length; index+=1) {
-        if(word[index] == ending[1] && word[index+1] == ending[2]){
-            return true;
+    let multila = word.split('');
+    let multilaEnd = ending.split('')
+    //  return console.log(multilaEnd)
+    let contForTrue = false;
+    for (let index = 0; index < multila.length-1; index+=1) {
+        
+        if(multila[index] == multilaEnd[0] && multila[index+1] == multilaEnd[1]){
+            contForTrue = true;
         }else{
-            return false;
+            contForTrue = false;
         }
     }
+    return console.log(contForTrue);
 }
-verifica('manoNaoFunciona','na')
+verifica('trybe','by')
