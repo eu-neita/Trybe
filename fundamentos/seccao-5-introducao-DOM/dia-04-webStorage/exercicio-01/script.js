@@ -7,6 +7,7 @@ const sizeFont = ['8','10','12','14','20'];
 const buttonsLineH = document.querySelectorAll('#line-height button')
 const fontHeight = ['1','1.15','1.5','2.0','3.0'];
 const buttonsFontStyle = document.querySelectorAll('#font-family button')
+const fontStyle = ['Arial','Times New Roman',];
 
 function chageBackColor() {
     buttonsBgc[0].addEventListener('click', function () {
@@ -98,9 +99,11 @@ chageLineHeight()
 function chageTypeFont() {
     buttonsFontStyle[0].addEventListener('click', function () {
         document.body.style.fontFamily = 'Arial'
+        localStorage.setItem('fontStyle', fontStyle[0]);
     })
     buttonsFontStyle[1].addEventListener('click', function () {
         document.body.style.fontFamily = 'Times New Roman'
+        localStorage.setItem('fontStyle', fontStyle[1]);
     })
 }
 chageTypeFont()
@@ -110,6 +113,7 @@ function storage() {
     const textColor = localStorage.getItem('colorFont')
     const sizeFont = localStorage.getItem('fontSize')
     const heightLine = localStorage.getItem('lineHeight')
+    const styleFont = localStorage.getItem('fontStyle')
 if (bglColor == 'white') {
     document.body.style.backgroundColor = 'white'
 }else if(bglColor === 'black'){
@@ -154,4 +158,9 @@ if (heightLine == '1') {
     document.body.style.lineHeight = '3.0'
 }
 
+if (styleFont == 'Arial') {
+    document.body.style.fontFamily = 'Arial'
+}else if(heightLine === '1.15'){
+    document.body.style.fontFamily = 'Times New Roman'
+}
 }
