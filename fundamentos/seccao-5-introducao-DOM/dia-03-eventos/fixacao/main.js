@@ -55,14 +55,14 @@ if (count = 2) {
 
 // - Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
-
-// Segue abaixo um exemplo do uso de event.target:
 myWebpage.addEventListener('mouseover', () => {
-myWebpage.style.color = 'red'
-}) 
-myWebpage.addEventListener('mouseleave', () => {
-  myWebpage.style.color = 'white'
+  myWebpage.style.color = 'red'
   }) 
+  myWebpage.addEventListener('mouseleave', () => {
+    myWebpage.style.color = 'white'
+    }) 
+  
+// Segue abaixo um exemplo do uso de event.target:
 
 const resetText = (event) => {
   // O Event é passado como um parâmetro para a função.
