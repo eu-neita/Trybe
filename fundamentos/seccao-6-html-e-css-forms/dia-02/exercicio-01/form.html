@@ -9,50 +9,42 @@
   </head>
 
   <body>
-    <h1 class="display-4 text-muted">Concorra à Viagem dos seus sonhos com a TrybeTrip</h1>
+    <h1 class="display-4 text-muted container">Concorra à Viagem dos seus sonhos com a TrybeTrip</h1>
 
     <form>
       <fieldset>
     <div class="form-group">
         <label for="fullName">Nome Completo:</label>
-        <input class="form-control" type="text" id="fullName" name="fullName" placeholder="Digite seu nome completo" maxlength="40" minlength="10" required>      
+        <input class="form-control container" type="text" id="fullName" name="fullName" placeholder="Digite seu nome completo" maxlength="40" minlength="10" required>      
         <br/>
     </div>
     <div class="form-group">
         <label for="email">Endereço de e-mail:</label>
-        <input class="form-control" type="email" id="email" name="email" placeholder="Digite seu e-mail" maxlength="50" minlength="10" required>
+        <input class="container form-control" type="email" id="email" name="email" placeholder="Digite seu e-mail" maxlength="50" minlength="10" required>
         <br/>
     </div>
-    <div class="form-control ">
-        <label class="" for="destination1">Cidade</label>
+    <div class="container align-middle" >
+        <input class="btn-check container" type="radio" id="destination1" className="radios" name="destinations" value="Cidade" required>
+        <label class="btn btn-outline-primary" for="destination1">Cidade</label>
 
-        <input type="radio" id="destination1" className="radios" name="destinations" value="Cidade" required>
+        <input class="btn-check container" type="radio" id="destination2" className="radios" name="destinations" value="Campo" required>
+        <label class="btn btn-outline-primary" for="destination2">Campo</label>
 
+        <input class="btn-check container" type="radio" id="destination3" className="radios" name="destinations" value="Praia" required>
+        <label class="btn btn-outline-primary" for="destination3">Praia</label>
 
-        <label for="destination2">Campo</label>
-
-        <input type="radio" id="destination2" className="radios" name="destinations" value="Campo" required>
-
-
-        <label for="destination3">Praia</label>
-
-        <input type="radio" id="destination3" className="radios" name="destinations" value="Praia" required>
-
-
-        <label for="destination4">Montanhas</label>
-
-        <input type="radio" id="destination4" className="radios" name="destinations" value="Montanhas" required>
-
+        <input class="btn-check container" type="radio" id="destination4" className="radios" name="destinations" value="Montanhas" required>
+        <label class="btn btn-outline-primary" for="destination4">Montanhas</label>
         <br/>
     </div>       
         <div class="form-group">
         <label for="why">Por que você deveria ser a pessoa desenvolvedora escolhida pelo concurso TrybeTrip?</label>
         <br/>
-        <textarea class="form-control" name="why" id="why" cols="60" rows="10" placeholder="Digite sua resposta vencedora aqui"></textarea>
+        <textarea class="form-control container" name="why" id="why" cols="60" rows="10" placeholder="Digite sua resposta vencedora aqui"></textarea>
         <br/>
         </div>
         <label for="date">Qual a melhor data para realizar sua viagem?</label>
-        <input class="form-control" type="date" id="date">
+        <input class="form-control container" type="date" id="date">
         <br/>
         <div class="form-group">
         <label for="promo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe.</label>
@@ -62,10 +54,11 @@
         <label for="agreement">Concordo que imagens de minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
         <input type="checkbox" name="agreement" id="agreement" required>
       </fieldset>
-      <div class="form-group">
-      <button class="btn btn-success" type="submit" id="submit-btn" disabled>Participar do concurso TrybeTrip</button>
-      </div>
-      <button class="btn btn-warning" type="button" id="clear-btn">Apagar informações</button>
+      <div class="form-group container">
+      <button class="btn btn-success container" type="submit" id="submit-btn" disabled>Participar do concurso TrybeTrip</button>
+
+      <button class="btn btn-danger container" type="button" id="clear-btn">Apagar informações</button>
+    </div>
     </form>
   </body>
 </html>
