@@ -13,12 +13,12 @@
 
     <form>
       <fieldset>
-    <div class="form-group">
+    <div class="form-group container">
         <label for="fullName">Nome Completo:</label>
         <input class="form-control container" type="text" id="fullName" name="fullName" placeholder="Digite seu nome completo" maxlength="40" minlength="10" required>      
         <br/>
     </div>
-    <div class="form-group">
+    <div class="form-group container">
         <label for="email">Endereço de e-mail:</label>
         <input class="container form-control" type="email" id="email" name="email" placeholder="Digite seu e-mail" maxlength="50" minlength="10" required>
         <br/>
@@ -37,23 +37,26 @@
         <label class="btn btn-outline-primary" for="destination4">Montanhas</label>
         <br/>
     </div>       
-        <div class="form-group">
+        <div class="form-group container">
         <label for="why">Por que você deveria ser a pessoa desenvolvedora escolhida pelo concurso TrybeTrip?</label>
         <br/>
         <textarea class="form-control container" name="why" id="why" cols="60" rows="10" placeholder="Digite sua resposta vencedora aqui"></textarea>
         <br/>
         </div>
+        <div class="form-group container">
         <label for="date">Qual a melhor data para realizar sua viagem?</label>
         <input class="form-control container" type="date" id="date">
         <br/>
-        <div class="form-group">
+    </div>
+        <div class="form-group container">
         <label for="promo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe.</label>
         <input type="checkbox" name="promo" id="promo">
         <br/>
-        </div>
+
         <label for="agreement">Concordo que imagens de minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
         <input type="checkbox" name="agreement" id="agreement" required>
       </fieldset>
+    </div>
       <div class="form-group container">
       <button class="btn btn-success container" type="submit" id="submit-btn" disabled>Participar do concurso TrybeTrip</button>
 
