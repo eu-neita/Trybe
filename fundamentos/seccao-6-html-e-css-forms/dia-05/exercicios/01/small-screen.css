@@ -13,12 +13,17 @@
   }
   article {
     max-width: 100%;
+    text-align: center;
   }
   h1 {
     font-size: medium;
+    display: flex;
+    justify-content: center;
   }
   h2 {
     font-size: medium;
+    display: flex;
+    justify-content: center;
   }
   img {
       max-width: 50%;
