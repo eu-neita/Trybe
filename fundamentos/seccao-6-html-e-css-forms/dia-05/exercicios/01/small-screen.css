@@ -9,15 +9,19 @@
     box-sizing: inherit;
   }
   body {
+    margin: 20px;
   }
   article {
   }
   h1 {
+    font-size: medium;
   }
   h2 {
+    font-size: medium;
   }
   img {
-      max-width: 100%;
+      max-width: 50%;
+
   }
   main {
   }
@@ -25,7 +29,33 @@
   }
   figure {
       margin: 0;
+      padding-top: 20px;
+      display: flex;
+      flex-flow: column wrap;
+      align-content: center;
+
   }
   figcaption {
     font-size: .8em;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    img {
+      max-width: 90%;
+    }
+    figcaption {
+      font-size: 20px;
+    }
+    article {
+      font-size: x-large;
+    }
+    h1 {
+      font-size: xx-large;
+    }
+    h2 {
+      font-size: xx-large;
+    }
   }
