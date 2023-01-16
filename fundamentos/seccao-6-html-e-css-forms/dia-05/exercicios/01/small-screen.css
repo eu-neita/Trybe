@@ -12,6 +12,7 @@
     margin: 20px;
   }
   article {
+    max-width: 100%;
   }
   h1 {
     font-size: medium;
@@ -51,6 +52,7 @@
     }
     article {
       font-size: x-large;
+      max-width: 90%;
     }
     h1 {
       font-size: xx-large;
