@@ -32,6 +32,9 @@
             sum();
         } catch (Error) {
             alert(Error.message);
+        } finally {
+          document.getElementById('value1').value = ''; // Apagar os valores do elemento que possui o id value1
+          document.getElementById('value2').value = ''; // Apagar os valores do elemento que possui o id value2
         }
     }
     window.onload = () => {
