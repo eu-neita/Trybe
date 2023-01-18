@@ -1,6 +1,0 @@
-let word = 'tryber';
-let invertWord = '';
-for (let index = word.length-1; index >= 0 ; index-=1) {
-    invertWord += word[index];
-}console.log(invertWord);
-
