@@ -46,8 +46,8 @@ customerInfo(order);
 
 const orderModifier = (order) => {
 order.name = 'Luiz Silva';
-orderToobj[4].total = 50;
 const orderToobj = Object.values(order);
+orderToobj[4].total = 50;
 const drinks = orderToobj[3].drinks.coke;
 const pizzaKey = Object.keys(orderToobj[3].pizza);
 return console.log(`Olá ${order.name} , o total do seu pedido de ${pizzaKey[0]}, ${pizzaKey[1]} e ${drinks.type} é R$ ${orderToobj[4].total},00.`);
