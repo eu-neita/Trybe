@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
+class App extends React.Component {
+  constructor() {
+    super()
+    this.handleClick = this.handleClick.bind(this)
+    this.state = {
+      countClicks: 0,
+    };
+  }
+  handleClick() {
+    this.setState((anteriorState, _props) => ({
+      countClicks: anteriorState.countClicks + 1,
+      })
+    )
+    console.log(`quantas vezes clikou ${this.state.countClicks}`);
+  }
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <button onClick={this.handleClick}>Meu butão</button>
   );
+ }
 }
 
 export default App;
