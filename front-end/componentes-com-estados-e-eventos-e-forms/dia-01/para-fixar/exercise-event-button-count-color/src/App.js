@@ -10,6 +10,14 @@ state = {
   countClicks: 0,
 }
 
+colorStatefunc = () => {
+  if (this.state.countClicks % 2 === 0 ){
+    return 'green'
+}else{
+  return 'red'
+}
+}
+
   handlerClick() {
     this.setState((anteriorState, props) => ({
       countClicks: anteriorState.countClicks + 1,
@@ -17,16 +25,10 @@ state = {
     ))
   }
   render() {
-    const colorStatefunc = () => {
-      if (this.state.countClicks % 2 === 0 ){
-        return 'green'
-    }else{
-      return 'red'
-    }
-    }
+
   return (
 
-    <button onClick={ this.handlerClick } style={{backgroundColor: `${colorStatefunc()}`}} >Click {this.state.countClicks}</button>
+    <button onClick={ this.handlerClick } style={{backgroundColor: `${this.colorStatefunc()}`}} >Click {this.state.countClicks}</button>
   )
   }
 }
