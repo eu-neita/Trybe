@@ -8,6 +8,8 @@
 
 
 import React from "react";
+import TextArea from "./TextArea.jsx";
+import Text from "./Text.jsx";
 
 class Form extends React.Component{
   constructor() {
@@ -32,13 +34,13 @@ class Form extends React.Component{
 render() {
   const { textAreaInput, inputValueText, inputValuePass, checked } = this.state;
   return(
-    <div>
+    <form>
       <select></select>
-      <input type='text' name='inputValueText' value={ inputValueText } onChange={this.handleChange} ></input>
+      <Text value={ inputValueText } handleChange={this.handleChange} />
       <input type='password' name='inputValuePass' value={ inputValuePass } onChange={this.handleChange} ></input>
       <input type='checkbox' name='check' value={ checked } onChange={this.handleChange} ></input>
-      <textarea name='textAreaInput' value={ textAreaInput } onChange={this.handleChange} ></textarea>
-    </div>
+      <TextArea value={ textAreaInput } handleChange={this.handleChange} />
+    </form>
   )
 }
 }
