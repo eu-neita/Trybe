@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.5",
     "redux": "^4.2.1",
     "redux-devtools": "^3.7.0",
     "vite": "^4.2.1"
