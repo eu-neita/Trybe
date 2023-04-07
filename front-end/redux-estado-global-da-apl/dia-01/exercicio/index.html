@@ -32,27 +32,46 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="random">Random color</button>
     </div>
     <script type="module">
       const INITIAL_STATE = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
+
+      function criarCor() {
+        const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        let cor = '#';
+        const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+        for (let i = 0; i < 6; i += 1) {
+            cor += oneChar[aleatorio()];
+        }
+        return cor;
+      }
+
       //Criando reducer
       const reducer = (state = INITIAL_STATE, action) => {
           if (action.type === 'INCREMENT_COLORS') {
               return { 
-                colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
-                index: state.index >= 5 ? 0 : state.index + 1
+                colors: state.colors,
+                index: state.index >= state.colors.length - 1 ? 0 : state.index + 1
             };
             }
 
             if (action.type === 'DECREMENT_COLORS') {
                 return { 
-                    colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
-                    index: state.index <= 0 ? 5 : state.index - 1
+                    colors: state.colors,
+                    index: state.index <= 0 ? state.colors.length - 1 : state.index - 1
                 };
             }
+            if(action.type === 'ADD_RANDOM_COLLOR') {
+              const randomC = criarCor();
+                return {
+                  colors: state.colors = [...state.colors, `${randomC}`],
+                  index: state.index = state.colors.length - 1
+                };                    
+              }
             return state;
         };
 
@@ -62,12 +81,15 @@
       //criando action
       const action = { type: 'INCREMENT_COLORS' };
       const action1 = { type: 'DECREMENT_COLORS' };
+      const action2 = { type: 'ADD_RANDOM_COLLOR' };
       // disparando action
       const buttonEl = document.querySelector('#next');
       const buttonEl1 = document.querySelector('#previous');
+      const buttonEl2 = document.querySelector('#random');
       console.log(buttonEl);
       buttonEl.addEventListener('click', () => store.dispatch(action));
       buttonEl1.addEventListener('click', () => store.dispatch(action1));
+      buttonEl2.addEventListener('click', () => store.dispatch(action2));
       const countEl = document.querySelector('span');
       countEl.style.color = 'white'
       store.subscribe(() => {
@@ -76,7 +98,6 @@
         const countEl = document.querySelector('span');
         countEl.innerHTML = globalState.colors[globalState.index];
         countEl.style.color = globalState.colors[globalState.index];
-        console.log('Estado atualizado !');
       });
     </script>
   </body>
