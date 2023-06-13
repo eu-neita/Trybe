@@ -1,14 +1,49 @@
 const readLine = require('readline-sync')
 
+const BMI_MAX_AND_MIN = {
+  'Underweight': {
+    minBMI: 0,
+    maxBMI: 18.4,
+  },
+  'Normal Weight': {
+    minBMI: 18.5,
+    maxBMI: 24.9,
+  },
+  'Overweight': {
+    minBMI: 25,
+    maxBMI: 29.9,
+  },
+  'Obese Class I': {
+    minBMI: 30.0,
+    maxBMI: 34.9,
+  },
+  'Obese Class II': {
+    minBMI: 35,
+    maxBMI: 39.9,
+  },
+  'Obese Class III': {
+    minBMI: 40,
+    maxBMI: 100, // Um valor default máximo qualquer, impossível de alcançar no imc.
+  },
+};
+
+function handleBMIResult(bmi) {
+  const statuses = Object.keys(BMI_MAX_AND_MIN); // ['Underweight', 'Normal Weight', 'Overweight'...]
+
+  const resultFind = statuses.find((status) => {
+    const { maxBMI, minBMI } = BMI_MAX_AND_MIN[status]; // acessamos as informações do intervalo da situação iterada
+
+    // caso esteja dentro do intervalo, significa que encontramos a situação apropriada
+    return bmi >= minBMI && bmi <= maxBMI;
+  });
+
+  return resultFind;
+}
+
 const imc = () => {
   const weight = readLine.question('What’s your weight?');
   const heigth = readLine.questionFloat('What’s your height?');
-  const calc = weight/(heigth*heigth);
-  if (calc < 18.5) return console.log('abaixo do peso')
-  if (calc > 18.5 && calc <= 24.9) return console.log(calc + ' peso normal')
-  if (calc >= 25 && calc <= 29.9) return console.log(calc + ' sobre-peso')
-  if (calc >= 30 && calc <= 34.9) return console.log(calc + ' obesidade grau 1')
-  if (calc >= 35 && calc <= 39.9) return console.log(calc + ' obesidade grau 2')
-  return console.log("obesidade graus 3 e 4");
+  const calc = handleBMIResult(weight/(heigth*heigth));
+  console.log(`situation: ${calc} ${weight/(heigth*heigth)}`);
 }
 imc();
