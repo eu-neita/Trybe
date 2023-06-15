@@ -11,6 +11,7 @@ const readCacauTrybeFile = async () => {
   }
 };
 
+
 const getAllChocolates = async () => {
   const cacauTrybe = await readCacauTrybeFile();
   return cacauTrybe.chocolates;
