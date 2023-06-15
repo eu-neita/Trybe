@@ -3,12 +3,22 @@ const cacauTrybe = require('./cacauTrybe');
 
 const app = express();
 
+const validateTeamChocolate = (req, res, next) => {
+  const { id } = req.params;
+  const isNumber = Number(id);
+  if(Number.isNaN(isNumber)) {
+    res.status(400).send({ message: 'não é um numero'});
+  } else {
+    next();
+  }
+};
+
 app.get('/chocolates', async (req, res) => {
   const chocolates = await cacauTrybe.getAllChocolates();
   res.status(200).json({ chocolates });
 });
 
-app.get('/chocolates/:id', async (req, res) => {
+app.get('/chocolates/:id', validateTeamChocolate, async (req, res) => {
   const { id } = req.params;
   // Usamos o Number para converter o id em um inteiro
   const chocolate = await cacauTrybe.getChocolateById(Number(id));
