@@ -4,5 +4,6 @@ public class Aplication {
     System.out.println(meuCarro.exibirInformacoes());
     meuCarro.setAno(2020);
     System.out.println(meuCarro.exibirInformacoes());
+    System.out.println(meuCarro.quantidadeDeCarros());
   }
 }

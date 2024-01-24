@@ -2,11 +2,16 @@ public class Carro {
   private String marca;
   private String modelo;
   private int ano;
+  static int contador = 0;
 
   public Carro(String marca, String modelo, int ano) {
     this.marca = marca;
     this.modelo = modelo;
     this.ano = ano;
+  }
+
+  public static int quantidadeDeCarros() {
+    return contador = contador + 1;
   }
 
   public String getMarca() {
