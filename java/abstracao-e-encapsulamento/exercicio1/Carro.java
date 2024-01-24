@@ -8,10 +8,11 @@ public class Carro {
     this.marca = marca;
     this.modelo = modelo;
     this.ano = ano;
+    contador++;
   }
 
   public static int quantidadeDeCarros() {
-    return contador = contador + 1;
+    return contador = contador++;
   }
 
   public String getMarca() {
